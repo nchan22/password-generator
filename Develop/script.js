@@ -56,3 +56,7 @@ function generatePassword() {
 }
 
 console.log(generatePassword());
+
+// TODO make prompts happen ONLY when button is pressed
+// TODO make password only generated when at least 1 or more of the prompts are true
+// TODO make created password show up in the box
