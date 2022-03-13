@@ -6,56 +6,143 @@ var charset = {
   symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
 };
 
-function generatePassword() {
-  charset = "";
+var generatePassword = function () {
+  // prompt asking number of characters
+  var password = "";
 
-  // add maybe a function if user doesn't add in a number or it is less than 7 or greater than 129 ?
+  // var charLength = window.prompt(
+  //   "How many characters would you like your password to be? Choose between 8 and 128"
+  // );
 
-  // somehow make it so these prompts don't show up when page is first loaded and only when the button is clicked.  maybe an addEventListener function?
+  // if user choose character less than 7 or more than 128.
+  // if (charLength <= 7 || charLength >= 128) {
+  //   window.alert("Password must be between  8 and 128 characters. Try again!");
+  //   var charLength = window.prompt(
+  //     "How many characters would you like your password to be? Choose between 8 and 128"
+  //   );
+  // }
 
-  if (length >= 7 || length <= 129) {
-    var length = window.prompt(
-      "Enter a number from 8 to 128 for password length."
-    );
-    // break;
-    // } else {
-    //   var length = window.prompt(
-    //     "Enter a number from 8 to 128 for password length."
-    //   );
-    // }
+  //test. currently letters work but need to not allow letters
+  // if (charLength >= 8 && charLength <= 128) {
+  //   var charLength = parseInt(
+  //     window.prompt(
+  //       "How many characters would you like your password to be? Choose between 8 and 128"
+  //     )
+  //   );
+  // } else {
+  //   window.alert("Password must be between  8 and 128 characters. Try again!");
+  //   var charLength = window.prompt(
+  //     "How many characters would you like your password to be? Choose between 8 and 128"
+  //   );
+  // }
 
-    var lowercase = window.confirm("Would you like to use lowercase letters?");
-    if (lowercase == true) {
-      charset += lowercase;
-    }
+  //test 2: do... while function
 
-    var uppercase = window.confirm("Would you like to use uppercase letters?");
-    if (uppercase == true) {
-      charset += uppercase;
-    }
+  // do {
+  //   var charLength = parseInt(
+  //     window.prompt(
+  //       "How many characters would you like your password to be? Choose between 8 and 128"
+  //     )
+  //   );
+  //   window.alert("Password must be between  8 and 128 characters. Try again!");
+  //   // var charLength = window.prompt(
+  //   //   "How many characters would you like your password to be? Choose between 8 and 128"
+  //   // );
+  // } while (charLength <= 7 || charLength >= 129);
 
-    var symbols = window.confirm("Would you like to use symbols?");
-    if (symbols == true) {
-      charset += symbols;
-    }
+  //test 2.5
 
-    var numbers = window.confirm("Would you like to use numbers?");
-    if (numbers == true) {
-      charset += numbers;
-    }
+  // do {
+  //   var charLength = parseInt(
+  //     window.prompt(
+  //       "How many characters would you like your password to be? Choose between 8 and 128"
+  //     )
+  //   );
+  // } while (charLength >= 8 && charLength <= 128);
 
-    for (let i = 0; i < length; i++) {
-      password += charset[Math.floor(Math.random() * charset.length)];
-    }
-    return password;
+  // test 3: while loop
+  // while (charLength <= 7 || charLength >= 129) {
+  //   window.alert("Password must be between  8 and 128 characters. Try again!");
+  //   break;
+  // } else if (charLength >= 8 && charLength <= 128) {
+  //   var charLength = parseInt(
+  //     window.prompt(
+  //       "How many characters would you like your password to be? Choose between 8 and 128"
+  //     )
+  //   )};
+  // }
+
+  // prompt for asking if the user wants numbers in the password
+  var confirmNumbers = window.confirm("Will your password have numbers in it?");
+
+  if (confirmNumbers) {
+    password += charset.numbers;
   }
-}
-// console.log(generatePassword());
 
-// TODO make prompts happen ONLY when button is pressed
-// TODO make password only generated when at least 1 or more of the prompts are true
-// TODO make created password show up in the box
-// TODO need a reset button when button is clicked again and repeat
+  // prompt for asking if the user wants lowerCase letters in the password
+  var confirmLowerCase = window.confirm(
+    "Will your password have lowercase letters in it?"
+  );
+
+  if (confirmLowerCase) {
+    password += charset.lowerCase;
+  }
+
+  // prompt for asking if the user wants  uppercase letters in the password
+  var confirmUpperCase = window.confirm(
+    "Will your password have uppercase letters in it?"
+  );
+
+  if (confirmLowerCase) {
+    password += charset.upperCase;
+  }
+
+  // prompt for asking if the user wants special Characters in the password?
+  var symbolsAndCharacters = window.confirm(
+    "Will your password have any special Characters in it?"
+  );
+
+  if (symbolsAndCharacters) {
+    password += charset.symbol;
+  }
+
+  // while loop if user skips numbers & uppercase & lowercase & special characters
+  while (
+    !confirmNumbers &&
+    !confirmLowerCase &&
+    !confirmUpperCase &&
+    !symbolsAndCharacters
+  ) {
+    window.alert(
+      "You must select at least one character type required in the password!"
+    );
+
+    var confirmNumbers = window.confirm(
+      "Will your password have numbers in it?"
+    );
+    password += charset.numbers;
+
+    var confirmLowerCase = window.confirm(
+      "Will your password have lowercase letters in it?"
+    );
+    password += charset.lowerCase;
+
+    var confirmUpperCase = window.confirm(
+      "Will your password have uppercase letters in it?"
+    );
+    password += charset.upperCase;
+
+    var symbolsAndCharacters = window.confirm(
+      "Will your password have any special Characters in it?"
+    );
+    password += charset.upperCase;
+  }
+  var randomPassword = [];
+  for (var i = 0; i < charLength; i++) {
+    randomPassword += password[Math.floor(Math.random() * password.length)];
+  }
+  return randomPassword;
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -70,61 +157,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// var charset = {
-//   lowercase: "abcdefghijklmnopqrstuvwxyz",
-//   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-//   number: "0123456789",
-//   symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
-// };
-
-// function generatePassword() {
-//   charset = "";
-
-//   // add maybe a function if user doesn't add in a number or it is less than 7 or greater than 129 ?
-
-//   // somehow make it so these prompts don't show up when page is first loaded and only when the button is clicked.  maybe an addEventListener function?
-
-//   if (length >= 7 || length <= 129) {
-//     var length = window.prompt(
-//       "Enter a number from 8 to 128 for password length."
-//     );
-//     // break;
-//     // } else {
-//     //   var length = window.prompt(
-//     //     "Enter a number from 8 to 128 for password length."
-//     //   );
-//     // }
-
-//     var lowercase = window.confirm("Would you like to use lowercase letters?");
-//     if (lowercase == true) {
-//       charset += lowercase;
-//     }
-
-//     var uppercase = window.confirm("Would you like to use uppercase letters?");
-//     if (uppercase == true) {
-//       charset += uppercase;
-//     }
-
-//     var symbols = window.confirm("Would you like to use symbols?");
-//     if (symbols == true) {
-//       charset += symbols;
-//     }
-
-//     var numbers = window.confirm("Would you like to use numbers?");
-//     if (numbers == true) {
-//       charset += numbers;
-//     }
-
-//     for (let i = 0; i < length; i++) {
-//       password += charset[Math.floor(Math.random() * charset.length)];
-//     }
-//     return password;
-//   }
-// }
-// console.log(generatePassword());
-
-// // TODO make prompts happen ONLY when button is pressed
-// // TODO make password only generated when at least 1 or more of the prompts are true
-// // TODO make created password show up in the box
-// // TODO need a reset button when button is clicked again and repeat
