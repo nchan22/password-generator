@@ -10,15 +10,39 @@ var generatePassword = function () {
   // prompt asking number of characters
   var password = "";
 
-  // var charLength = window.prompt(
-  //   "How many characters would you like your password to be? Choose between 8 and 128"
-  // );
+  var charLength = window.prompt(
+    "How many characters would you like your password to be? Choose between 8 and 128"
+  );
+
+  // charLength = function () {
+  //   while (charLength === "" || charLength === null) {
+  //     charLength = window.prompt(
+  //       "How many characters would you like your password to be? Choose between 8 and 128"
+  //     );
+  //   }
+  // };
+
+  // if (charLength === true) var charLength;
 
   // if user choose character less than 7 or more than 128.
-  // if (charLength <= 7 || charLength >= 128) {
+  // if (charLength <= 7 || charLength >= 129) {
   //   window.alert("Password must be between  8 and 128 characters. Try again!");
   //   var charLength = window.prompt(
   //     "How many characters would you like your password to be? Choose between 8 and 128"
+  //   );
+  // }
+
+  // var charLength = "";
+  //   while (charLength === "" || charLength === null) {
+  //   charLength = window.prompt(
+  //     "How many characters would you like your password to be? Choose between 8 and 128"
+  //   );
+  // }
+  // return charLength;
+
+  // while (isNaN(charLength) && (charLength <= 7 || charLength >= 129)) {
+  //   charLength = window.prompt(
+  //     "You must choose a number! Please enter a number between 8 and 128"
   //   );
   // }
 
