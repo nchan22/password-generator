@@ -14,8 +14,16 @@ var generatePassword = function () {
     "How many characters would you like your password to be? Choose between 8 and 128"
   );
 
-  // if user choose character less than 7 or more than 128.
-  if (charLength <= 7 || charLength >= 129) {
+  // if user choose character less than 8 or more than 128, no input or is not a number.
+
+  while (
+    isNaN(charLength) ||
+    Number.parseInt(charLength) < 8 ||
+    Number.parseInt(charLength) > 128 ||
+    charLength === "" ||
+    charLength === null
+  ) {
+    console.log(Number.parseInt(charLength) !== NaN);
     window.alert("Password must be between  8 and 128 characters. Try again!");
     var charLength = window.prompt(
       "How many characters would you like your password to be? Choose between 8 and 128"
