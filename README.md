@@ -6,7 +6,7 @@
 
 * To create a basic general password creator that will ask user questions and create a password based off their answers.
 
-### ## Written with:
+### Written with:
 * HTML
 * CSS
 * JS
