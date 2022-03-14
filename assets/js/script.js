@@ -14,87 +14,13 @@ var generatePassword = function () {
     "How many characters would you like your password to be? Choose between 8 and 128"
   );
 
-  // charLength = function () {
-  //   while (charLength === "" || charLength === null) {
-  //     charLength = window.prompt(
-  //       "How many characters would you like your password to be? Choose between 8 and 128"
-  //     );
-  //   }
-  // };
-
-  // if (charLength === true) var charLength;
-
   // if user choose character less than 7 or more than 128.
-  // if (charLength <= 7 || charLength >= 129) {
-  //   window.alert("Password must be between  8 and 128 characters. Try again!");
-  //   var charLength = window.prompt(
-  //     "How many characters would you like your password to be? Choose between 8 and 128"
-  //   );
-  // }
-
-  // var charLength = "";
-  //   while (charLength === "" || charLength === null) {
-  //   charLength = window.prompt(
-  //     "How many characters would you like your password to be? Choose between 8 and 128"
-  //   );
-  // }
-  // return charLength;
-
-  // while (isNaN(charLength) && (charLength <= 7 || charLength >= 129)) {
-  //   charLength = window.prompt(
-  //     "You must choose a number! Please enter a number between 8 and 128"
-  //   );
-  // }
-
-  //test. currently letters work but need to not allow letters
-  // if (charLength >= 8 && charLength <= 128) {
-  //   var charLength = parseInt(
-  //     window.prompt(
-  //       "How many characters would you like your password to be? Choose between 8 and 128"
-  //     )
-  //   );
-  // } else {
-  //   window.alert("Password must be between  8 and 128 characters. Try again!");
-  //   var charLength = window.prompt(
-  //     "How many characters would you like your password to be? Choose between 8 and 128"
-  //   );
-  // }
-
-  //test 2: do... while function
-
-  // do {
-  //   var charLength = parseInt(
-  //     window.prompt(
-  //       "How many characters would you like your password to be? Choose between 8 and 128"
-  //     )
-  //   );
-  //   window.alert("Password must be between  8 and 128 characters. Try again!");
-  //   // var charLength = window.prompt(
-  //   //   "How many characters would you like your password to be? Choose between 8 and 128"
-  //   // );
-  // } while (charLength <= 7 || charLength >= 129);
-
-  //test 2.5
-
-  // do {
-  //   var charLength = parseInt(
-  //     window.prompt(
-  //       "How many characters would you like your password to be? Choose between 8 and 128"
-  //     )
-  //   );
-  // } while (charLength >= 8 && charLength <= 128);
-
-  // test 3: while loop
-  // while (charLength <= 7 || charLength >= 129) {
-  //   window.alert("Password must be between  8 and 128 characters. Try again!");
-  //   break;
-  // } else if (charLength >= 8 && charLength <= 128) {
-  //   var charLength = parseInt(
-  //     window.prompt(
-  //       "How many characters would you like your password to be? Choose between 8 and 128"
-  //     )
-  //   )};
-  // }
+  if (charLength <= 7 || charLength >= 129) {
+    window.alert("Password must be between  8 and 128 characters. Try again!");
+    var charLength = window.prompt(
+      "How many characters would you like your password to be? Choose between 8 and 128"
+    );
+  }
 
   // prompt for asking if the user wants numbers in the password
   var confirmNumbers = window.confirm("Will your password have numbers in it?");
