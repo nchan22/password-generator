@@ -20,6 +20,10 @@ https://nchan22.github.io/password-generator/
 * Update to allow generator to create multiple passwords at once and allow user to choose from it
 * Update to allow storage of possible passwords for user to access again
 
+## Screenshots
+screenshots\screenshot1.jpg
+screenshots\screenshot2.jpg
+screenshots\screenshot3.jpg
 
 ## Contributors:
 Original written by user Xandromus (https://github.com/coding-boot-camp/friendly-parakeet)
