@@ -34,7 +34,7 @@ var generatePassword = function () {
   var confirmNumbers = window.confirm("Will your password have numbers in it?");
 
   if (confirmNumbers) {
-    password += charset.numbers;
+    password += charset.number;
   }
 
   // prompt for asking if the user wants lowerCase letters in the password
@@ -78,7 +78,7 @@ var generatePassword = function () {
     var confirmNumbers = window.confirm(
       "Will your password have numbers in it?"
     );
-    password += charset.numbers;
+    password += charset.number;
 
     var confirmLowerCase = window.confirm(
       "Will your password have lowercase letters in it?"
@@ -93,7 +93,7 @@ var generatePassword = function () {
     var symbolsAndCharacters = window.confirm(
       "Will your password have any special Characters in it?"
     );
-    password += charset.upperCase;
+    password += charset.symbol;
   }
   var randomPassword = [];
   for (var i = 0; i < charLength; i++) {
