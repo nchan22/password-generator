@@ -21,9 +21,9 @@ https://nchan22.github.io/password-generator/
 * Update to allow storage of possible passwords for user to access again
 
 ## Screenshots
-screenshots\screenshot1.jpg
-screenshots\screenshot2.jpg
-screenshots\screenshot3.jpg
+![Alt text]screenshots\screenshot1.jpg
+![Alt text]screenshots\screenshot2.jpg
+![Alt text]screenshots\screenshot3.jpg
 
 ## Contributors:
 Original written by user Xandromus (https://github.com/coding-boot-camp/friendly-parakeet)
